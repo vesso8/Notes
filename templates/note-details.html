@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+
+        <div class="body">
+            <!--headings-->
+            <h1>Note Details</h1>
+            <!--headings-->
+
+            <!--details note box-->
+            <div class="note-details-container">
+                <h2>{{ notes.title}}</h2>
+                <img class="detail-img" src="{{ notes.image }}" />
+                <div>
+                    <p>Content</p>
+                </div>
+                <p>
+                    {{ notes.content }}
+                </p>
+                <div class="right">
+                    <a class="button edit" href="{% url 'edit note' notes.pk %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete note' notes.pk %}">Delete</a>
+                </div>
+            </div>
+            <!--end details note box-->
+        </div>
+
+        <!--footer-->
+        <footer>
+            <div>Python Web Basics Exam @SoftUni</div>
+        </footer>
+        <!--end footer-->
+{% endblock %}
